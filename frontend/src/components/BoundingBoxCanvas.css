@@ -1,0 +1,33 @@
+.canvas-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 1rem;
+}
+
+.source-image {
+    display: block;
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* 
+  The canvas overlays exactly onto the image.
+  We make the canvas absolutely positioned to cover the image exactly.
+*/
+.overlay-canvas {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: calc(100% - 2rem);
+    max-height: 70vh;
+    object-fit: contain;
+    pointer-events: none;
+    /* Let clicks pass through if needed */
+}

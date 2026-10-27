@@ -1,0 +1,94 @@
+.image-uploader {
+    position: relative;
+    width: 100%;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border: 2px dashed var(--glass-border);
+    overflow: hidden;
+}
+
+.image-uploader::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg at 50% 50%, rgba(16, 185, 129, 0) 0%, rgba(16, 185, 129, 0) 70%, rgba(16, 185, 129, 0.1) 100%);
+    opacity: 0;
+    transform-origin: center;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.image-uploader:hover::after, .image-uploader.dragging::after {
+    opacity: 1;
+    animation: radarSweep 4s linear infinite;
+}
+
+@keyframes radarSweep {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.image-uploader.dragging {
+    border-color: var(--accent-color);
+    background: rgba(16, 185, 129, 0.05);
+}
+
+.image-uploader.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.image-uploader input[type="file"] {
+    display: none;
+}
+
+.upload-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    padding: 2rem;
+    text-align: center;
+}
+
+.upload-icon {
+    width: 64px;
+    height: 64px;
+    background: var(--glass-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+    transition: transform 0.3s ease;
+}
+
+.upload-icon svg {
+    width: 32px;
+    height: 32px;
+}
+
+.upload-label:hover .upload-icon {
+    transform: translateY(-5px);
+    background: var(--glass-hover);
+}
+
+.upload-label h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.upload-label p {
+    font-size: 0.875rem;
+}

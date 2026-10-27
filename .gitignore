@@ -1,0 +1,66 @@
+# ===========================
+# Python / Backend
+# ===========================
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+*.db
+*.sqlite3
+
+# ===========================
+# Large Model Files (use Git LFS or cloud storage instead)
+# ===========================
+*.pt
+*.onnx
+*.weights
+
+# ===========================
+# Training Dataset (too large for GitHub)
+# ===========================
+Aerial*/
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.gif
+coco1.txt
+AeroGuard_Final_Documentation.pdf
+
+# ===========================
+# Node / Frontend
+# ===========================
+node_modules/
+frontend/node_modules/
+
+# ===========================
+# Environment & Secrets
+# ===========================
+.env
+.env.local
+.env.*.local
+
+# ===========================
+# OS / Editor
+# ===========================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ===========================
+# Logs
+# ===========================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
