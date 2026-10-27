@@ -12,7 +12,8 @@ function DetectionHistory({ onClose }) {
 
     const fetchHistory = async () => {
         try {
-            const response = await fetch('/history');
+            const API_URL = import.meta.env.VITE_API_URL || '';
+            const response = await fetch(\\/history\);
             if (!response.ok) throw new Error('Failed to fetch history');
             const data = await response.json();
             setHistory(data);
@@ -87,3 +88,4 @@ function DetectionHistory({ onClose }) {
 }
 
 export default DetectionHistory;
+

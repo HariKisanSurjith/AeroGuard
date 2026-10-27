@@ -13,9 +13,9 @@ build/
 *.sqlite3
 
 # ===========================
-# Large Model Files (use Git LFS or cloud storage instead)
+# Large Model Files
 # ===========================
-*.pt
+# best.pt is allowed (51MB, under GitHub 100MB limit — needed for Render)
 *.onnx
 *.weights
 

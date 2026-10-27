@@ -40,8 +40,9 @@ function App() {
     formData.append('iou', iou);
 
     try {
-      // Connect to FastAPI backend via proxy
-      const response = await fetch('/detect', {
+      // Connect to FastAPI backend (uses env var in production, proxy in dev)
+      const API_URL = import.meta.env.VITE_API_URL || '';
+      const response = await fetch(`${API_URL}/detect`, {
         method: 'POST',
         body: formData,
       });
